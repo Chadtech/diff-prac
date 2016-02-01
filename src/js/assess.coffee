@@ -24,8 +24,19 @@ module.exports = Assess = (el, vo) ->
             el.setAttribute k, vosAttr[k]          
 
     else
-      # parent = el.parentNode
+      parent   = el.parentNode
+      children = _.toArray el.children
 
-      # console.log 'ye shouldnt be here!'
+      newEl = document.createElement vo.type
+      keys  = _.keys vo.attributes
+
+      _.forEach keys, (k) ->
+        v = vo.attributes[k]
+        newEl.setAttribute k, v
+
+      _.forEach children, (child) ->
+        newEl.appendChild child
+
+      parent.replaceChild newEl, el
 
 
