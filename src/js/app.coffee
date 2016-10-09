@@ -12,6 +12,7 @@ A =
     children:   ['A']
   )]
 
+
 B = 
   type:         'div'
   attributes:   (id: 'B')
@@ -21,6 +22,7 @@ B =
     children:   ['B']
   )]
 
+
 C = 
   type:         'div'
   attributes:   (id: 'C')
@@ -29,6 +31,7 @@ C =
     attributes: ('class': 'point')
     children:   ['C']
   )]
+
 
 updatedRoot =
   type:         'p'
@@ -41,7 +44,9 @@ updatedRoot =
 
 Root = document.getElementById 'root'
 
-dewit = => Assess Root, updatedRoot
+dewit = => 
+  Assess Root, updatedRoot
+  _.forEach 
 
 setTimeout dewit, 1000
 

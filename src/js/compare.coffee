@@ -1,6 +1,7 @@
 # Dependencies
 _ = require 'lodash'
 
+
 stringifyHTML = (el) ->
   attributes = _.map el.attributes, 
     (attr) ->
